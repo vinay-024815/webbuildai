@@ -8,6 +8,7 @@ MCP_SERVER_VERSION = "1.0.0"
 
 [[kv_namespaces]]
 binding = "CONTENT_KV"
+id = "8169183f1908468fb1f6b64c2f43d02c"
 
 [observability]
 enabled = true
