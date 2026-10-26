@@ -84,5 +84,3 @@ export class DedupChecker {
     await this.kv.deleteDedupIndex(hash, slug, type, title);
   }
 }
-
-export { DedupChecker };

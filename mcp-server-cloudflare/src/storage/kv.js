@@ -87,5 +87,3 @@ function slugify(text) {
     .replace(/[\s_-]+/g, "-")
     .replace(/^-+|-+$/g, "");
 }
-
-export { ContentKV };

@@ -1,4 +1,4 @@
-name = "mcp-server-cloudflare"
+name = "webbuildai"
 main = "src/index.js"
 compatibility_date = "2024-11-01"
 
@@ -8,13 +8,6 @@ MCP_SERVER_VERSION = "1.0.0"
 
 [[kv_namespaces]]
 binding = "CONTENT_KV"
-preview_id = "preview_content_kv"
-id = "content_kv_production"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "webbuild_ai_content"
-database_id = ""
 
 [observability]
 enabled = true
