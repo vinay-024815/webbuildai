@@ -2,8 +2,8 @@
  * API Key authentication middleware for MCP server
  */
 
-export function validateAuth(request) {
-  const expectedKey = MCP_API_KEY; // Set via wrangler vars or secrets
+export function validateAuth(request,env) {
+  const expectedKey = env.MCP_API_KEY; // Set via wrangler vars or secrets
   const authHeader = request.headers.get("Authorization");
 
   if (!expectedKey) {

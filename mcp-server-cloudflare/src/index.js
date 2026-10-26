@@ -29,7 +29,7 @@ export default {
       }
 
       // Auth check
-      const auth = validateAuth(request);
+      const auth = validateAuth(request,env);
       if (!auth.valid) {
         return new Response(JSON.stringify({ error: auth.error }), {
           status: 401,
