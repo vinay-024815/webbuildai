@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "ChatGPT vs Claude",
+    "category": "AI Assistants",
+    "criteria": 6,
+    "href": "/compare/chatgpt-vs-claude"
+  },
+  {
+    "id": 2,
+    "title": "Gemini vs Claude",
+    "category": "AI Assistants",
+    "criteria": 5,
+    "href": "/compare/gemini-vs-claude"
+  },
+  {
+    "id": 3,
+    "title": "Cursor vs Copilot",
+    "category": "AI Coding",
+    "criteria": 6,
+    "href": "/compare/cursor-vs-copilot"
+  },
+  {
+    "id": 4,
+    "title": "Wix AI vs WordPress",
+    "category": "Website Platforms",
+    "criteria": 7,
+    "href": "/compare/wix-ai-vs-wordpress"
+  }
+]

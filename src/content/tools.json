@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Wix AI",
+    "category": "Website Builder",
+    "rating": 4.5,
+    "url": "https://wix.com/",
+    "description": "AI-powered website creation for beginners",
+    "icon": "layout"
+  },
+  {
+    "id": 2,
+    "title": "Hostinger AI",
+    "category": "Website Builder",
+    "rating": 4.3,
+    "url": "https://hostinger.com/",
+    "description": "Affordable AI website builder with hosting",
+    "icon": "layout"
+  },
+  {
+    "id": 3,
+    "title": "Framer AI",
+    "category": "Design",
+    "rating": 4.7,
+    "url": "https://framer.com/",
+    "description": "Professional design and publishing platform",
+    "icon": "blocks"
+  },
+  {
+    "id": 4,
+    "title": "Surfer SEO",
+    "category": "SEO",
+    "rating": 4.6,
+    "url": "https://surfer.seo/",
+    "description": "Content optimization and SEO analysis",
+    "icon": "chart"
+  }
+]

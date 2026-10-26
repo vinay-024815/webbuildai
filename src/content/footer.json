@@ -1,0 +1,48 @@
+{
+  "columns": [
+    {
+      "title": "POPULAR",
+      "links": [
+        ["Best Web Hosting", "/build"],
+        ["Best WordPress Hosting", "/hosting"],
+        ["Best AI Website Builders", "/ai"],
+        ["Best Website Builders", "/build"],
+        ["Cheap Domain Registrars", "/build"],
+        ["Best Email Marketing Tools", "/tools"],
+        ["Best VPN Services", "/tools"],
+        ["Best Antivirus Software", "/tools"],
+        ["Canva vs Adobe", "/compare"]
+      ]
+    },
+    {
+      "title": "LEARN",
+      "links": [
+        ["Start Here", "/"],
+        ["Build a Website", "/build"],
+        ["AI for the Web", "/ai"],
+        ["SEO & AI Search", "/seo"],
+        ["Grow Online", "/tools"],
+        ["Software Reviews", "/tools"]
+      ]
+    },
+    {
+      "title": "RESOURCES",
+      "links": [
+        ["AI Tools Directory", "/ai"],
+        ["Free Tools", "/tools"],
+        ["Build My Website Stack", "/tools"],
+        ["Website Audit", "/tools"],
+        ["Comparisons", "/compare"]
+      ]
+    },
+    {
+      "title": "LEGAL",
+      "links": [
+        ["Privacy Policy", "/privacy-policy"],
+        ["Terms of Use", "/terms"],
+        ["Cookie Policy", "/cookie-policy"],
+        ["Contact", "/contact"]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "headline": "Build, automate and grow your website with AI.",
+  "subheadline": "Practical guides, AI tools, website stacks, and SEO checklists for teams shipping on the modern web.",
+  "primaryCTA": {
+    "text": "Start Building",
+    "href": "#tools"
+  },
+  "secondaryCTA": {
+    "text": "Explore AI Tools",
+    "href": "#directory"
+  },
+  "categories": [
+    { "name": "Create a Website", "color": "#3b82f6", "icon": "layout" },
+    { "name": "SEO Checklist", "color": "#22c55e", "icon": "check" },
+    { "name": "AI Website Builders", "color": "#7c3aed", "icon": "blocks" },
+    { "name": "WordPress Themes", "color": "#0ea5e9", "icon": "wp" },
+    { "name": "Statistics", "color": "#f59e0b", "icon": "chart" },
+    { "name": "Web Design", "color": "#ec4899", "icon": "pen" },
+    { "name": "Social Media Marketing", "color": "#8b5cf6", "icon": "share" },
+    { "name": "Email Marketing", "color": "#14b8a6", "icon": "mail" }
+  ]
+}

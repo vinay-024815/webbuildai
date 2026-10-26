@@ -1,0 +1,52 @@
+{
+  "main": [
+    {
+      "label": "Build",
+      "href": "/build",
+      "sub": [
+        { "label": "How to Create a Website", "href": "/build/create-website" },
+        { "label": "What Is WordPress", "href": "/build/wordpress" },
+        { "label": "Best Website Builders", "href": "/build/builders" },
+        { "label": "WordPress Guides", "href": "/build/wordpress-guides" }
+      ]
+    },
+    {
+      "label": "AI",
+      "href": "/ai",
+      "sub": [
+        { "label": "Best AI Website Builders", "href": "/ai/builders" },
+        { "label": "Build with Lovable", "href": "/ai/lovable" },
+        { "label": "AI Agents Explained", "href": "/ai/agents" },
+        { "label": "AI Tools Directory", "href": "/ai/directory" }
+      ]
+    },
+    {
+      "label": "Hosting",
+      "href": "/hosting",
+      "sub": [
+        { "label": "Best Web Hosting", "href": "/hosting" },
+        { "label": "Best WordPress Hosting", "href": "/hosting/wordpress" },
+        { "label": "Cheap VPS Hosting", "href": "/hosting/vps" }
+      ]
+    },
+    {
+      "label": "SEO",
+      "href": "/seo",
+      "sub": [
+        { "label": "SEO Action Plan", "href": "/seo/action-plan" },
+        { "label": "Technical SEO Checklist", "href": "/seo/technical" },
+        { "label": "AI Search: GEO & AEO", "href": "/seo/geo-aeo" }
+      ]
+    },
+    {
+      "label": "Tools",
+      "href": "/tools",
+      "sub": []
+    },
+    {
+      "label": "Compare",
+      "href": "/compare",
+      "sub": []
+    }
+  ]
+}

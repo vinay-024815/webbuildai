@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "SEO Action Plan",
+    "category": "SEO",
+    "excerpt": "A complete SEO action plan for new and existing websites.",
+    "href": "/seo/action-plan"
+  },
+  {
+    "id": 2,
+    "title": "Technical SEO Checklist",
+    "category": "SEO",
+    "excerpt": "Audit your site's technical SEO with this comprehensive checklist.",
+    "href": "/seo/technical"
+  },
+  {
+    "id": 3,
+    "title": "AI Search: GEO & AEO",
+    "category": "SEO",
+    "excerpt": "Optimize your content for AI search engines and answer engines.",
+    "href": "/seo/geo-aeo"
+  }
+]

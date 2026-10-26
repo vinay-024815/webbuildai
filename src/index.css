@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --color-ink: #0f172a;
+  --color-muted: #64748b;
+  --color-forest: #1e293b;
+  --color-accent: #7c3aed;
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-line: #cbd5e1;
+  --color-cream: #f8fafc;
+  --color-cream-deep: #f1f5f9;
+  --color-paper: #ffffff;
+  --color-moss: #334155;
+  --color-leaf: #475569;
+  --color-mint: #e2e8f0;
+  --color-sage: #cbd5e1;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.75rem;
+}
+
+body {
+  margin: 0;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+/* ===== Content-Fit Layout System =====
+   Ensures AI-generated content never breaks layout regardless of length */
+
+/* Fluid typography - scales with viewport, never breaks containers */
+h1 {
+  font-size: clamp(2rem, 5vw + 0.5rem, 4rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.75rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.3;
+}
+
+p {
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  line-height: 1.6;
+}
+
+/* Content-fit containers - auto-adjust height, scroll if overflow */
+.content-fit {
+  min-height: 300px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.content-fit-sm {
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.content-fit-lg {
+  min-height: 400px;
+  max-height: 800px;
+  overflow-y: auto;
+}
+
+/* Safe image containers - never stretch or overflow */
+.img-fit {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text truncation with expand toggle support */
+.line-clamp-safe {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2-safe {
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3-safe {
+  -webkit-line-clamp: 3;
+}
+
+.line-clamp-4-safe {
+  -webkit-line-clamp: 4;
+}
+
+/* AI-generated content block - preserves formatting, fits container */
+.ai-content-block {
+  max-width: none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.ai-content-block p,
+.ai-content-block li {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.ai-content-block h1,
+.ai-content-block h2,
+.ai-content-block h3,
+.ai-content-block h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.ai-content-block img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* Focus ring safety - ensures visible focus without overflow */
+.focus-safe {
+  outline: none;
+}
+
+.focus-safe:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
