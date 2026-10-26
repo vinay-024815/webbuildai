@@ -2,8 +2,8 @@
  * Duplicate detection logic for content
  */
 
-import { hashContent, generateSlug } from "../utils/hash.js";
-
+import { hashContent } from "../utils/hash.js";
+import { generateSlug } from "../utils/slug.js";
 export class DedupChecker {
   constructor(kv) {
     this.kv = kv;

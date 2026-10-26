@@ -3,7 +3,7 @@
  * Handles initialize, tools/list, and tools/call methods
  */
 
-import { getToolDefinitions } from "./tools.js";
+import { TOOL_DEFINITIONS } from "./tools.js";
 import { ContentKV } from "../storage/kv.js";
 import { hashContent } from "../utils/hash.js";
 import { generateSlug } from "../utils/slug.js";
@@ -11,7 +11,7 @@ import { DedupChecker } from "../storage/dedup.js";
 
 export class MCPProtocol {
   constructor() {
-    this.tools = getToolDefinitions();
+ this.tools = TOOL_DEFINITIONS;
   }
 
   handleInitialize() {
