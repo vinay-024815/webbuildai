@@ -15,7 +15,7 @@ export function AISearch() {
         </div>
         <ol className="grid gap-4 sm:grid-cols-3">
           {["Classic SEO", "Answer engines", "LLM visibility"].map((t, i) => (
-            <li key={t} className="rounded-2xl border border-white/15 bg-white/5 p-5">
+            <li key={t} className="rounded-2xl border border-white/15 bg-[#1A1D22] p-5">
               <span className="text-sm font-bold text-yellow-500">0{i + 1}</span>
               <p className="mt-2 font-semibold">{t}</p>
               <p className="mt-2 text-sm text-white/75">{i === 0 ? "Crawling, indexing, relevance, links and page experience." : i === 1 ? "Direct answers, question-led structure, FAQs and schema." : "Entities, citations, brand mentions and content built for retrieval."}</p>

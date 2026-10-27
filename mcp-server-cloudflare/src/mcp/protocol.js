@@ -3,11 +3,77 @@
  * Handles initialize, tools/list, and tools/call methods
  */
 
+import fs from "node:fs";
+import path from "node:url";
 import { TOOL_DEFINITIONS } from "./tools.js";
-import { ContentKV } from "../storage/kv.js";
 import { hashContent } from "../utils/hash.js";
 import { generateSlug } from "../utils/slug.js";
-import { DedupChecker } from "../storage/dedup.js";
+
+// Content directory - relative to the project root
+const CONTENT_DIR = path.join(process.cwd(), "src", "content");
+
+// Cache for content files (loaded once at startup)
+let _contentFilesCache = null;
+
+/**
+ * Get all JSON content files from src/content/ directory
+ * Returns object: { filenameWithoutJson: fullPath }
+ */
+function getContentFiles() {
+  if (!_contentFilesCache) {
+    try {
+      const files = fs.readdirSync(CONTENT_DIR);
+      _contentFilesCache = files
+        .filter((f) => f.endsWith(".json"))
+        .reduce((acc, file) => {
+          const key = file.replace(".json", "");
+          acc[key] = path.join(CONTENT_DIR, file);
+          return acc;
+        }, {});
+    } catch (e) {
+      _contentFilesCache = {};
+    }
+  }
+  return _contentFilesCache;
+}
+
+/**
+ * Read and parse a JSON file from content directory
+ */
+function readContentFile(fileName) {
+  const filePath = path.join(CONTENT_DIR, `${fileName}.json`);
+  try {
+    const data = fs.readFileSync(filePath, "utf8");
+    return JSON.parse(data);
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Write data to a JSON file in content directory
+ */
+function writeContentFile(fileName, data) {
+  const filePath = path.join(CONTENT_DIR, `${fileName}.json`);
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+}
+
+/**
+ * Generate slug from title (same logic as original)
+ */
+function makeSlug(title, type) {
+  return generateSlug(title, type);
+}
+
+/**
+ * Check for duplicate slug in a data array
+ */
+function checkDuplicate(data, slug, type) {
+  const existing = data.find(
+    (item) => item.slug === slug && item.type === type
+  );
+  return existing ? { isDuplicate: true, existing } : { isDuplicate: false };
+}
 
 export class MCPProtocol {
   constructor() {
@@ -57,165 +123,273 @@ export class MCPProtocol {
   }
 
   async handleReadContent(args, env) {
-    const { type, slug } = args;
-    const kv = new ContentKV(env.CONTENT_KV);
-    const content = await kv.getContent(`${type}-${slug}`);
-    if (!content) {
-      throw new Error(`Content not found: ${type}/${slug}`);
+    const { file, slug } = args;
+
+    if (!file || !slug) {
+      throw new Error("Missing required args: file and slug");
     }
-    return { content };
+
+    const data = readContentFile(file);
+    const item = data.find((item) => item.slug === slug);
+
+    if (!item) {
+      throw new Error(`Content not found: ${file}/${slug}`);
+    }
+
+    return { content: item };
   }
 
   async handleListContent(args, env) {
-    const { type, limit = 20, offset = 0 } = args;
-    const kv = new ContentKV(env.CONTENT_KV);
-    const prefix = type ? `${type}-` : "";
-    const result = await kv.listContent(prefix, limit, null);
-    return { items: result.items.slice(offset, offset + limit), total: result.total };
+    const { file, type, limit = 20, offset = 0 } = args;
+
+    if (!file) {
+      throw new Error("Missing required arg: file");
+    }
+
+    const data = readContentFile(file);
+    const filtered = type ? data.filter((item) => item.type === type) : data;
+    const items = filtered.slice(offset, offset + limit);
+
+    return {
+      items,
+      total: filtered.length,
+      file,
+      type,
+    };
   }
 
   async handleCreateContent(args, env) {
-    const { type, title, body, category, tags = [], force = false } = args;
-    const kv = new ContentKV(env.CONTENT_KV);
-    const dedup = new DedupChecker(kv);
+    const { file, title, body, category, tags = [] } = args;
 
-    const dupCheck = await dedup.check({ title, body, type });
-    if (dupCheck.isDuplicate && !force) {
+    if (!file || !title) {
+      throw new Error("Missing required args: file and title");
+    }
+
+    const data = readContentFile(file);
+
+    // Generate slug from title
+    const slug = makeSlug(title, file);
+
+    // Check for duplicate
+    const dupCheck = checkDuplicate(data, slug, file);
+    if (dupCheck.isDuplicate) {
       return {
         success: false,
         error: "duplicate_content",
-        reason: dupCheck.reason,
+        reason: `Slug "${slug}" already exists in ${file}`,
         existing: dupCheck.existing,
-        suggestedSlug: dupCheck.suggestedSlug,
       };
     }
 
-    const slug = force ? (dupCheck.suggestedSlug || generateSlug(title, type)) : dupCheck.suggestedSlug;
-    const hash = await hashContent(title, body, type);
     const now = new Date().toISOString();
 
-    const content = {
+    const newItem = {
       id: slug,
-      type,
+      type: file,
       title,
       slug,
-      body,
-      category,
+      body: body || "",
+      category: category || "",
       tags,
       createdAt: now,
       updatedAt: now,
-      hash,
     };
 
-    await kv.setContent(slug, content);
-    await dedup.register({ slug, title, body, type, hash });
+    data.push(newItem);
 
-    return { success: true, slug, contentId: slug, content };
+    // Write back to file
+    writeContentFile(file, data);
+
+    return {
+      success: true,
+      slug,
+      content: newItem,
+    };
   }
 
   async handleUpdateContent(args, env) {
-    const { slug, title, body, category, tags } = args;
-    const kv = new ContentKV(env.CONTENT_KV);
-    const dedup = new DedupChecker(kv);
+    const { file, slug, title, body, category, tags } = args;
 
-    const existing = await kv.getContent(slug);
-    if (!existing) {
-      throw new Error(`Content not found: ${slug}`);
+    if (!file || !slug) {
+      throw new Error("Missing required args: file and slug");
     }
 
-    const updated = {
-      ...existing,
-      title: title || existing.title,
-      body: body || existing.body,
-      category: category || existing.category,
-      tags: tags || existing.tags,
-      updatedAt: new Date().toISOString(),
+    const data = readContentFile(file);
+
+    const index = data.findIndex((item) => item.slug === slug);
+
+    if (index === -1) {
+      throw new Error(`Content not found: ${file}/${slug}`);
+    }
+
+    // Update fields if provided (undefined means "keep existing")
+    if (title !== undefined) data[index].title = title;
+    if (body !== undefined) data[index].body = body;
+    if (category !== undefined) data[index].category = category;
+    if (tags !== undefined) data[index].tags = tags;
+
+    data[index].updatedAt = new Date().toISOString();
+
+    // Write back to file
+    writeContentFile(file, data);
+
+    return {
+      success: true,
+      content: data[index],
     };
-
-    if (title || body) {
-      const dupCheck = await dedup.check({
-        title: updated.title,
-        body: updated.body,
-        type: existing.type,
-      });
-      if (dupCheck.isDuplicate && dupCheck.existing.some(e => e.slug !== slug)) {
-        return {
-          success: false,
-          error: "duplicate_content",
-          reason: dupCheck.reason,
-          existing: dupCheck.existing,
-        };
-      }
-      updated.hash = await hashContent(updated.title, updated.body, existing.type);
-      await dedup.unregister({ slug, title: existing.title, type: existing.type, hash: existing.hash });
-      await dedup.register({ slug, title: updated.title, body: updated.body, type: existing.type, hash: updated.hash });
-    }
-
-    await kv.setContent(slug, updated);
-    return { success: true, updatedAt: updated.updatedAt, content: updated };
   }
 
   async handleDeleteContent(args, env) {
-    const { slug } = args;
-    const kv = new ContentKV(env.CONTENT_KV);
-    const dedup = new DedupChecker(kv);
+    const { file, slug } = args;
 
-    const existing = await kv.getContent(slug);
-    if (!existing) {
-      throw new Error(`Content not found: ${slug}`);
+    if (!file || !slug) {
+      throw new Error("Missing required args: file and slug");
     }
 
-    await dedup.unregister({
-      slug,
-      title: existing.title,
-      type: existing.type,
-      hash: existing.hash,
-    });
-    await kv.deleteContent(slug);
+    const data = readContentFile(file);
 
-    return { success: true };
+    const index = data.findIndex((item) => item.slug === slug);
+
+    if (index === -1) {
+      throw new Error(`Content not found: ${file}/${slug}`);
+    }
+
+    const removed = data.splice(index, 1)[0];
+
+    // Write back to file (keeps array without the removed item)
+    writeContentFile(file, data);
+
+    return {
+      success: true,
+      deleted: removed,
+    };
   }
 
   async handleCheckDuplicate(args, env) {
     const { title, body, type = "blog" } = args;
-    const kv = new ContentKV(env.CONTENT_KV);
-    const dedup = new DedupChecker(kv);
 
-    const result = await dedup.check({ title, body, type });
-    return result;
+    if (!title) {
+      throw new Error("Missing required arg: title");
+    }
+
+    const files = getContentFiles();
+    // Check across all content files
+    for (const [fileName, filePath] of Object.entries(files)) {
+      const data = readContentFile(fileName);
+      const existing = data.find(
+        (item) => item.title === title && item.type === type
+      );
+      if (existing) {
+        return {
+          isDuplicate: true,
+          existing,
+          file: fileName,
+        };
+      }
+    }
+
+    return { isDuplicate: false };
   }
 
   async handleSearchContent(args, env) {
-    const { query, type, limit = 20 } = args;
-    const kv = new ContentKV(env.CONTENT_KV);
-    const prefix = type ? `${type}-` : "";
-    const result = await kv.listContent(prefix, limit * 2, null);
+    const { file, query } = args;
+
+    if (!query) {
+      throw new Error("Missing required arg: query");
+    }
 
     const q = query.toLowerCase();
-    const matches = result.items.filter(item =>
-      item.title.toLowerCase().includes(q) ||
-      (item.body && item.body.toLowerCase().includes(q)) ||
-      (item.category && item.category.toLowerCase().includes(q))
-    ).slice(0, limit);
 
-    return { results: matches, total: matches.length };
+    if (file) {
+      // Search in specific file
+      const data = readContentFile(file);
+      const matches = data.filter((item) =>
+        (item.title && item.title.toLowerCase().includes(q)) ||
+        (item.body && item.body.toLowerCase().includes(q)) ||
+        (item.category && item.category.toLowerCase().includes(q))
+      );
+
+      return {
+        results: matches,
+        total: matches.length,
+        file,
+        query,
+      };
+    }
+
+    // Search across all files
+    const files = getContentFiles();
+    const allMatches = [];
+
+    for (const [fileName, filePath] of Object.entries(files)) {
+      const data = readContentFile(fileName);
+      const matches = data.filter((item) =>
+        (item.title && item.title.toLowerCase().includes(q)) ||
+        (item.body && item.body.toLowerCase().includes(q)) ||
+        (item.category && item.category.toLowerCase().includes(q))
+      );
+      allMatches.push(...matches.map((m) => ({ ...m, _sourceFile: fileName })));
+    }
+
+    // Dedup by slug
+    const seen = new Set();
+    const uniqueMatches = allMatches.filter((item) => {
+      if (seen.has(item.slug)) return false;
+      seen.add(item.slug);
+      return true;
+    });
+
+    return {
+      results: uniqueMatches,
+      total: uniqueMatches.length,
+      query,
+    };
   }
 
   async handleGetStats(args, env) {
-    const kv = new ContentKV(env.CONTENT_KV);
-    const result = await kv.listContent("", 1000, null);
+    const { file } = args;
 
+    if (file) {
+      // Stats for specific file
+      const data = readContentFile(file);
+
+      const byType = {};
+      const byCategory = {};
+
+      for (const item of data) {
+        byType[item.type] = (byType[item.type] || 0) + 1;
+        byCategory[item.category] = (byCategory[item.category] || 0) + 1;
+      }
+
+      return {
+        total: data.length,
+        byType,
+        byCategory,
+        file,
+      };
+    }
+
+    // Stats for ALL files
+    const files = getContentFiles();
+    let total = 0;
     const byType = {};
-    const byCategory = {};
-    for (const item of result.items) {
-      byType[item.type] = (byType[item.type] || 0) + 1;
-      byCategory[item.category] = (byCategory[item.category] || 0) + 1;
+    const byFile = {};
+
+    for (const [fileName, filePath] of Object.entries(files)) {
+      const data = readContentFile(fileName);
+      total += data.length;
+      byFile[fileName] = data.length;
+
+      for (const item of data) {
+        const t = item.type || "unknown";
+        byType[t] = (byType[t] || 0) + 1;
+      }
     }
 
     return {
-      total: result.items.length,
+      total,
       byType,
-      byCategory,
+      byFile, // breakdown: { blogs: 6, tools: 12, ... }
     };
   }
 }

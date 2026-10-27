@@ -16,7 +16,7 @@ export function BuildPicker() {
   const [active, setActive] = useState("business");
   const goal = GOALS.find((g) => g.id === active) || GOALS[0];
   return (
-    <section className="border-y border-line bg-paper py-20">
+    <section className="border-y border-line bg-white py-20">
       <Container>
         <div className="mb-8 max-w-2xl">
           <p className="text-sm font-bold uppercase tracking-wider text-forest">Personalised path</p>

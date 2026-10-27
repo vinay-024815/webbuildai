@@ -3,7 +3,7 @@ import { Container } from "../ui";
 
 export function Blueprints() {
   return (
-    <section id="blueprints" className="scroll-mt-24 border-y border-line bg-paper py-20">
+    <section id="blueprints" className="scroll-mt-24 border-y border-line bg-white py-20">
       <Container>
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <h2 className="font-serif text-3xl md:text-4xl">Website Blueprints</h2>

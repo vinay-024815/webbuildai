@@ -17,3 +17,226 @@
 [2m1:56:26 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/components/article/TableOfContents.jsx[22m Could not Fast Refresh ("useActiveHeading" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
 [2m1:56:26 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Post.jsx[22m
 [2m2:32:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m2:42:16 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/article/SidebarNewsletter.jsx[22m
+[2m2:42:23 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/article/SidebarNewsletter.jsx[22m
+[2m2:42:27 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/article/SidebarNewsletter.jsx[22m
+[2m2:42:40 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/article/SidebarNewsletter.jsx[22m
+[2m2:44:26 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/article/SidebarNewsletter.jsx[22m
+[2m3:05:55 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m3:06:07 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m3:06:15 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m3:06:30 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m3:06:39 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m3:06:46 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m3:06:52 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m3:07:00 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m3:12:20 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BuildPicker.jsx[22m
+[2m3:12:20 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BuildPicker.jsx[22m
+[2m3:12:25 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BuildPicker.jsx[22m
+[2m3:12:47 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BuildPicker.jsx[22m
+[2m3:13:08 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/Blueprints.jsx[22m
+[2m3:13:08 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/Blueprints.jsx[22m
+[2m3:14:32 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/CompareGrid.jsx[22m
+[2m3:16:23 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:16:29 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:16:33 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:16:49 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:16:57 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:17:15 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:18:41 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:19:13 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:19:18 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:19:21 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:19:30 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:19:35 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:19:42 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:20:09 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:20:11 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:21:52 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/FreeToolsGrid.jsx[22m
+[2m3:22:12 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:22:13 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[2m3:22:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:23:04 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AISearch.jsx[22m
+[2m3:23:28 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/FreeToolsGrid.jsx[22m
+[2m3:28:00 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:29:19 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:29:45 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:30:00 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:30:54 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:31:13 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:31:25 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:32:18 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/FreeToolsGrid.jsx[22m
+[2m3:33:03 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/FreeToolsGrid.jsx[22m
+[2m3:33:04 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/FreeToolsGrid.jsx[22m
+[2m3:34:07 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:34:09 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:34:13 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:34:17 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:34:31 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:34:33 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:34:33 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\vinay\Downloads\lol\src\components\AIToolsDirectory.jsx: Unexpected token, expected "..." (50:19)
+
+[0m [90m 48 |[31m               [33m>[31m
+ [90m 49 |[31m                 [33m<[31m[33mp[31m 
+[31m[1m>[22m[31m[90m 50 |[31m                   {c}
+ [90m    |[31m                    [31m[1m^[22m[31m
+ [90m 51 |[31m                 [33m<[31m[33m/[31m[33mp[31m[33m>[31m
+ [90m 52 |[31m
+ [90m 53 |[31m                 [33m<[31m[33mp[31m className[33m=[31m[32m"mt-2 text-sm font-medium text-[#58675E] group-hover:text-[#315D49]"[31m[33m>[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/vinay/Downloads/lol/src/components/AIToolsDirectory.jsx[39m:50:19
+[33m  48 |                >
+  49 |                  <p 
+  50 |                    {c}
+     |                     ^
+  51 |                  </p>
+  52 |  [39m
+      at constructor (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:369:19)
+      at JSXParserMixin.raise (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:6622:19)
+      at JSXParserMixin.unexpected (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:6642:16)
+      at JSXParserMixin.expect (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:6922:12)
+      at JSXParserMixin.jsxParseAttribute (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4663:12)
+      at JSXParserMixin.jsxParseOpeningElementAfterName (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4685:28)
+      at JSXParserMixin.jsxParseOpeningElementAt (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4680:17)
+      at JSXParserMixin.jsxParseElementAt (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4704:33)
+      at JSXParserMixin.jsxParseElementAt (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4716:32)
+      at JSXParserMixin.jsxParseElement (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4767:17)
+      at JSXParserMixin.parseExprAtom (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4777:19)
+      at JSXParserMixin.parseExprSubscripts (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10857:21)
+      at C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12460:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12527:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11706:28)
+      at JSXParserMixin.parseExprAtom (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11362:23)
+      at JSXParserMixin.parseExprAtom (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4782:20)
+      at JSXParserMixin.parseExprSubscripts (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10857:21)
+      at JSXParserMixin.parseExpressionBase (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10810:23)
+      at C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10806:39
+      at JSXParserMixin.allowInAnd (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12455:16)
+      at JSXParserMixin.parseExpression (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10806:17)
+      at JSXParserMixin.parseReturnStatement (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:13176:28)
+      at JSXParserMixin.parseStatementContent (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12832:21)
+      at JSXParserMixin.parseStatementLike (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:13331:10)
+      at JSXParserMixin.parseFunctionBody (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12134:24)
+      at JSXParserMixin.parseArrowExpression (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12109:10)
+      at JSXParserMixin.parseParenAndDistinguishExpression (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11718:12)
+      at JSXParserMixin.parseExprAtom (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11362:23)
+      at JSXParserMixin.parseExprAtom (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4782:20)
+      at JSXParserMixin.parseExprSubscripts (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11092:21)
+[2m3:34:34 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:34:34 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\vinay\Downloads\lol\src\components\AIToolsDirectory.jsx: Unexpected token, expected "..." (51:19)
+
+[0m [90m 49 |[31m                 [33m<[31m[33mp[31m 
+ [90m 50 |[31m                 
+[31m[1m>[22m[31m[90m 51 |[31m                   {c}
+ [90m    |[31m                    [31m[1m^[22m[31m
+ [90m 52 |[31m                 [33m<[31m[33m/[31m[33mp[31m[33m>[31m
+ [90m 53 |[31m
+ [90m 54 |[31m                 [33m<[31m[33mp[31m className[33m=[31m[32m"mt-2 text-sm font-medium text-[#58675E] group-hover:text-[#315D49]"[31m[33m>[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/vinay/Downloads/lol/src/components/AIToolsDirectory.jsx[39m:51:19
+[33m  49 |                  <p 
+  50 |                  
+  51 |                    {c}
+     |                     ^
+  52 |                  </p>
+  53 |  [39m
+      at constructor (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:369:19)
+      at JSXParserMixin.raise (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:6622:19)
+      at JSXParserMixin.unexpected (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:6642:16)
+      at JSXParserMixin.expect (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:6922:12)
+      at JSXParserMixin.jsxParseAttribute (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4663:12)
+      at JSXParserMixin.jsxParseOpeningElementAfterName (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4685:28)
+      at JSXParserMixin.jsxParseOpeningElementAt (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4680:17)
+      at JSXParserMixin.jsxParseElementAt (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4704:33)
+      at JSXParserMixin.jsxParseElementAt (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4716:32)
+      at JSXParserMixin.jsxParseElement (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4767:17)
+      at JSXParserMixin.parseExprAtom (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4777:19)
+      at JSXParserMixin.parseExprSubscripts (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10857:21)
+      at C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12460:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12527:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11706:28)
+      at JSXParserMixin.parseExprAtom (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11362:23)
+      at JSXParserMixin.parseExprAtom (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4782:20)
+      at JSXParserMixin.parseExprSubscripts (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10857:21)
+      at JSXParserMixin.parseExpressionBase (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10810:23)
+      at C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10806:39
+      at JSXParserMixin.allowInAnd (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12455:16)
+      at JSXParserMixin.parseExpression (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:10806:17)
+      at JSXParserMixin.parseReturnStatement (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:13176:28)
+      at JSXParserMixin.parseStatementContent (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12832:21)
+      at JSXParserMixin.parseStatementLike (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:13331:10)
+      at JSXParserMixin.parseFunctionBody (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12134:24)
+      at JSXParserMixin.parseArrowExpression (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:12109:10)
+      at JSXParserMixin.parseParenAndDistinguishExpression (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11718:12)
+      at JSXParserMixin.parseExprAtom (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11362:23)
+      at JSXParserMixin.parseExprAtom (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:4782:20)
+      at JSXParserMixin.parseExprSubscripts (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (C:\Users\vinay\Downloads\lol\node_modules\@babel\parser\lib\index.js:11092:21)
+[2m3:34:40 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:34:53 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:34:56 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:35:00 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:36:40 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/CompareGrid.jsx[22m
+[2m3:37:08 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/CompareGrid.jsx[22m
+[2m3:37:27 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/CompareGrid.jsx[22m
+[2m3:37:35 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/CompareGrid.jsx[22m
+[2m3:37:43 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:37:57 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/FreeToolsGrid.jsx[22m
+[2m3:38:12 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/FreeToolsGrid.jsx[22m
+[2m3:38:26 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/AIToolsDirectory.jsx[22m
+[2m3:40:19 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:40:35 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:40:42 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:40:48 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:40:56 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:41:07 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:41:37 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:41:59 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:42:16 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:42:27 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:42:30 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:42:38 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:42:40 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:42:43 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:42:45 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:42:50 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:43:03 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:43:06 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BestPicks.jsx[22m
+[2m3:43:38 pm[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/BuildPicker.jsx[22m

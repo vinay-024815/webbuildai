@@ -36,13 +36,13 @@ export function SidebarNewsletter() {
             />
             <button
               type="submit"
-              className="h-11 w-full rounded-full bg-mint text-[14px] font-semibold text-forest transition hover:bg-sage"
+              className="h-11 w-full rounded-full bg-black text-[14px] font-bold text-white transition"
             >
               Subscribe
             </button>
           </form>
         )}
-        <p className="mt-3 text-[11px] leading-5 text-cream/55">No spam. Unsubscribe anytime.</p>
+        {/* <p className="mt-3 text-[11px] leading-5 text-cream/55">No spam. Unsubscribe anytime.</p> */}
       </div>
     </section>
   );
