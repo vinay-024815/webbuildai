@@ -4,7 +4,7 @@
  */
 
 import fs from "node:fs";
-import path from "node:url";
+import path from "node:path";
 import { TOOL_DEFINITIONS } from "./tools.js";
 import { hashContent } from "../utils/hash.js";
 import { generateSlug } from "../utils/slug.js";
