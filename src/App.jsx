@@ -35,7 +35,7 @@ function Header() {
           <LogoMark />
           <span className="font-serif text-[28px] font-semibold tracking-tight">WebBuild AI</span>
         </Link>
-        <nav className="hidden items-center gap-6 text-[16px] text-ink/90 xl:flex">
+        <nav className="hidden items-center gap-6 text-[16px] text-ink/90  xl:flex">
           {(navLinks || []).map((link, idx) => (
             <div 
               key={link.href || link.label} 

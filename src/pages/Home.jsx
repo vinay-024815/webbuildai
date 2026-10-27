@@ -166,7 +166,7 @@ const icons = [
                 {icons[index]}
               </div>
 
-              <h3 className="text-[22px] font-semibold leading-tight tracking-[-0.03em] text-ink">
+              <h3 className="text-[22px] font-semibold leading-tight tracking-[-0.03em] text-black">
                 {index === 0
                   ? "VPN & Privacy"
                   : index === 1
@@ -185,7 +185,7 @@ const icons = [
                   <li key={item}>
                     <a
                       href={index === 0 ? "/blog/best-vpn" : index === 1 ? "/blog/best-antivirus-software" : "/blog/best-ai-image-generators"}
-                      className="group/link flex min-h-[48px] items-center justify-between gap-3 rounded-xl px-2.5 py-3 text-[15px] font-semibold leading-5 text-ink transition-colors duration-200 hover:bg-[#E7F3F0] hover:text-[#07584F] sm:text-[16px]"
+                      className="group/link flex min-h-[48px] items-center justify-between gap-3 rounded-xl px-2.5 py-3 text-[15px] font-semibold leading-5 text-black transition-colors duration-200 hover:bg-[#E7F3F0] hover:text-[#07584F] sm:text-[16px]"
                     >
                       <span>{item}</span>
                       <span className="shrink-0 text-[23px] font-normal leading-none transition-transform duration-200 group-hover/link:translate-x-1">

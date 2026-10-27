@@ -1,9 +1,12 @@
-/**
- * MCP Tool Definitions
- * Defines all available tools with input/output schemas
- */
+const file = { type: "string", description: "JSON file name in src/content, with or without .json" };
+const slug = { type: "string", description: "Record slug or id" };
+const item = { type: "object", description: "Complete JSON record to append to an array file" };
+const body = { type: "string", description: "Content HTML/Markdown; stored as the record's content field" };
 
 export const MCP_TOOLS = {
+  LIST_CONTENT_FILES: "list_content_files",
+  READ_CONTENT_FILE: "read_content_file",
+  EDIT_CONTENT_FILE: "edit_content_file",
   READ_CONTENT: "read_content",
   LIST_CONTENT: "list_content",
   CREATE_CONTENT: "create_content",
@@ -16,24 +19,51 @@ export const MCP_TOOLS = {
 
 export const TOOL_DEFINITIONS = [
   {
-    name: MCP_TOOLS.READ_CONTENT,
-    description: "Fetch specific content by type and slug",
+    name: MCP_TOOLS.LIST_CONTENT_FILES,
+    description: "List JSON files available in src/content",
+    inputSchema: { type: "object", properties: {} },
+  },
+  {
+    name: MCP_TOOLS.READ_CONTENT_FILE,
+    description: "Read a complete JSON content file",
+    inputSchema: {
+      type: "object",
+      properties: { file },
+      required: ["file"],
+    },
+  },
+  {
+    name: MCP_TOOLS.EDIT_CONTENT_FILE,
+    description: "Add, replace, or remove a value in any content JSON using a JSON Pointer path",
     inputSchema: {
       type: "object",
       properties: {
-        type: { type: "string", description: "Content type: blog, tool, page, comparison" },
-        slug: { type: "string", description: "Content slug identifier" },
+        file,
+        operation: { type: "string", enum: ["add", "replace", "remove"] },
+        path: { type: "string", description: "JSON Pointer, for example /0/content or /nav/items/0" },
+        value: { description: "JSON value; required for add and replace" },
       },
-      required: ["type", "slug"],
+      required: ["file", "operation", "path"],
+    },
+  },
+  {
+    name: MCP_TOOLS.READ_CONTENT,
+    description: "Fetch a record by slug or id from a content file",
+    inputSchema: {
+      type: "object",
+      properties: { file, type: { type: "string", description: "Legacy alias for file" }, slug },
+      required: ["slug"],
+      anyOf: [{ required: ["file"] }, { required: ["type"] }],
     },
   },
   {
     name: MCP_TOOLS.LIST_CONTENT,
-    description: "List content with pagination and optional type filter",
+    description: "List records in a content file with pagination",
     inputSchema: {
       type: "object",
       properties: {
-        type: { type: "string", description: "Filter by content type" },
+        file,
+        type: { type: "string", description: "Legacy alias for file" },
         limit: { type: "number", default: 20, minimum: 1, maximum: 100 },
         offset: { type: "number", default: 0, minimum: 0 },
       },
@@ -41,86 +71,63 @@ export const TOOL_DEFINITIONS = [
   },
   {
     name: MCP_TOOLS.CREATE_CONTENT,
-    description: "Create new content with automatic deduplication check",
+    description: "Append a record to an array content file. For blogs, body is saved as content.",
     inputSchema: {
       type: "object",
-      properties: {
-        type: { type: "string", description: "Content type: blog, tool, page, comparison" },
-        title: { type: "string", description: "Content title" },
-        body: { type: "string", description: "Content body (markdown/HTML)" },
-        category: { type: "string", description: "Content category" },
-        tags: { type: "array", items: { type: "string" }, description: "Tags" },
-        force: { type: "boolean", default: false, description: "Force create even if duplicate detected" },
-      },
-      required: ["type", "title", "body"],
+      properties: { file, type: { type: "string", description: "Legacy alias for file" }, item, title: { type: "string" }, body, category: { type: "string" }, tags: { type: "array", items: { type: "string" } } },
+      required: ["title", "body"],
+      anyOf: [{ required: ["file"] }, { required: ["type"] }],
     },
   },
   {
     name: MCP_TOOLS.UPDATE_CONTENT,
-    description: "Update existing content by slug",
+    description: "Update a record by slug or id. For blogs, body is saved as content.",
     inputSchema: {
       type: "object",
-      properties: {
-        slug: { type: "string", description: "Content slug to update" },
-        title: { type: "string", description: "New title" },
-        body: { type: "string", description: "New body content" },
-        category: { type: "string", description: "New category" },
-        tags: { type: "array", items: { type: "string" }, description: "New tags" },
-      },
+      properties: { file, type: { type: "string", description: "Legacy alias for file" }, slug, title: { type: "string" }, body, category: { type: "string" }, tags: { type: "array", items: { type: "string" } }, updates: { type: "object", description: "Additional record fields to update" } },
       required: ["slug"],
+      anyOf: [{ required: ["file"] }, { required: ["type"] }],
     },
   },
   {
     name: MCP_TOOLS.DELETE_CONTENT,
-    description: "Delete content by slug",
+    description: "Delete a record by slug or id from an array content file",
     inputSchema: {
       type: "object",
-      properties: {
-        slug: { type: "string", description: "Content slug to delete" },
-      },
+      properties: { file, type: { type: "string", description: "Legacy alias for file" }, slug },
       required: ["slug"],
+      anyOf: [{ required: ["file"] }, { required: ["type"] }],
     },
   },
   {
     name: MCP_TOOLS.CHECK_DUPLICATE,
-    description: "Check if content would be a duplicate before creating",
+    description: "Check whether a title already exists in content files",
     inputSchema: {
       type: "object",
-      properties: {
-        title: { type: "string", description: "Proposed title" },
-        body: { type: "string", description: "Proposed body content" },
-        type: { type: "string", default: "blog", description: "Content type" },
-      },
+      properties: { title: { type: "string" }, body, type: { type: "string" } },
       required: ["title"],
     },
   },
   {
     name: MCP_TOOLS.SEARCH_CONTENT,
-    description: "Search content by title or body text",
+    description: "Search content by title, body, excerpt, or category",
     inputSchema: {
       type: "object",
-      properties: {
-        query: { type: "string", description: "Search query" },
-        type: { type: "string", description: "Filter by content type" },
-        limit: { type: "number", default: 20, minimum: 1, maximum: 100 },
-      },
+      properties: { query: { type: "string" }, file, type: { type: "string", description: "Legacy alias for file" }, limit: { type: "number", default: 20, minimum: 1, maximum: 100 } },
       required: ["query"],
     },
   },
   {
     name: MCP_TOOLS.GET_STATS,
-    description: "Get content statistics and analytics",
-    inputSchema: {
-      type: "object",
-      properties: {},
-    },
+    description: "Get item counts by file and total content statistics",
+    inputSchema: { type: "object", properties: { file } },
   },
 ];
 
 export function getToolNames() {
-  return TOOL_DEFINITIONS.map(t => t.name);
+  return TOOL_DEFINITIONS.map((tool) => tool.name);
 }
 
 export function getToolDefinition(name) {
-  return TOOL_DEFINITIONS.find(t => t.name === name);
+  return TOOL_DEFINITIONS.find((tool) => tool.name === name);
 }

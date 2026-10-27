@@ -3,6 +3,7 @@ dist
 .DS_Store
 *.local
 .env
+.dev.vars
 public
 PLAN-BLOG-PAGE.md
 PLAN-SIDEBAR.md

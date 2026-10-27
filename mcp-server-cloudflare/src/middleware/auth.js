@@ -7,8 +7,7 @@ export function validateAuth(request,env) {
   const authHeader = request.headers.get("Authorization");
 
   if (!expectedKey) {
-    // If no key configured, allow all (dev mode)
-    return { valid: true };
+    return { valid: false, error: "MCP_API_KEY is not configured" };
   }
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
