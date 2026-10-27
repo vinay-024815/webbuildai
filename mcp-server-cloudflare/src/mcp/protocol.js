@@ -8,9 +8,14 @@ import path from "node:path";
 import { TOOL_DEFINITIONS } from "./tools.js";
 import { hashContent } from "../utils/hash.js";
 import { generateSlug } from "../utils/slug.js";
+import { fileURLToPath } from 'node:url';
 
 // Content directory - relative to the project root
 // const CONTENT_DIR = path.join(process.cwd(), "src", "content");
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const CONTENT_DIR = path.join(__dirname, "..", "..", "src", "content");
 
 
