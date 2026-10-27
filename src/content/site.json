@@ -1,5 +1,9 @@
 {
   "brandName": "WebBuild AI",
+  "author": {
+    "name": "WebBuild AI Editorial",
+    "role": "Independent research team"
+  },
   "tagline": "Build, automate and grow on the modern web",
   "description": "Practical guides, AI tools, website stacks, and SEO checklists for teams shipping on the modern web.",
   "logoText": "WebBuildAI",

@@ -3,7 +3,7 @@ export function ArticleCard({ article }) {
   return (
     <a
       href={`/blog/${article.slug}`}
-      className={`group flex min-w-0 flex-col overflow-hidden rounded-[20px] border transition duration-300 bg-white hover:-translate-y-1 hover:shadow-lg ${
+      className={`group flex h-[424px] min-w-0 flex-col overflow-hidden rounded-[20px] border transition duration-300 bg-white hover:-translate-y-1 hover:shadow-lg ${
         tone ? "border-forest bg-forest text-cream" : "border-forest/10 bg-[#fffdf8] text-ink"
       }`}
     >
@@ -28,11 +28,11 @@ export function ArticleCard({ article }) {
         >
           {article.kicker || article.category}
         </p>
-        <h3 className="mt-2 line-clamp-2 font-serif text-[21px] leading-[1.3] tracking-[-0.02em]">
+        <h3 className="mt-2 min-h-[2.6em] line-clamp-3 font-serif text-[21px] leading-[1.3] tracking-[-0.02em]">
           {article.title}
         </h3>
         <p
-          className={`mt-3 line-clamp-3 text-[13px] leading-[1.75] ${
+          className={`mt-3 line-clamp-2 text-[13px] leading-[1.75] ${
             tone ? "text-cream/75" : "text-muted"
           }`}
         >

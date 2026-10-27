@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Container } from "./ui";
 import { LogoMark } from "./icons";
+import WebsiteStackGenerator from "./pages/WebsiteStackGenerator";
 import { navLinks, footerColumns } from "./data";
 import Home from "./pages/Home";
 import Categories from "./pages/Categories";
@@ -18,9 +19,15 @@ import Build from "./pages/Build";
 import Hosting from "./pages/Hosting";
 import SEO from "./pages/SEO";
 import AI from "./pages/AI";
+import StartHere from "./pages/StartHere";
+import Domains from "./pages/Domains";
+import Grow from "./pages/Grow";
+import SoftwarePage from "./pages/Software";
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const [activeMega, setActiveMega] = useState(null);
+  
   return (
     <header className="sticky top-0 z-50 border-b border-line/80 bg-white/90 backdrop-blur-md">
       <Container className="flex items-center justify-between py-4 md:py-5">
@@ -28,9 +35,60 @@ function Header() {
           <LogoMark />
           <span className="font-serif text-[28px] font-semibold tracking-tight">WebBuild AI</span>
         </Link>
-        <nav className="hidden items-center gap-8 text-[17px] !text-black/90  text-muted md:flex">
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="transition hover:text-ink">{link.label}</a>
+        <nav className="hidden items-center gap-6 text-[16px] text-ink/90 xl:flex">
+          {(navLinks || []).map((link, idx) => (
+            <div 
+              key={link.href || link.label} 
+              className="group relative flex h-full items-center"
+              onMouseEnter={() => link.mega ? setActiveMega(idx) : setActiveMega(null)}
+              onMouseLeave={() => setActiveMega(null)}
+            >
+              <Link 
+                to={link.href} 
+                className="flex items-center gap-1 px-2 py-2 transition hover:text-ink"
+              >
+                {link.label}
+                {(link.mega || link.sub) && (
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round"></path>
+                  </svg>
+                )}
+              </Link>
+              {link.mega && activeMega === idx && (
+                <div className={`absolute top-full z-50 translate-y-1 rounded-b-2xl bg-white p-7 text-ink shadow-2xl ring-1 ring-black/5 ${link.label === 'Tools' ? 'right-0' : 'left-0'}`} style={{ width: link.mega.length === 3 ? '54rem' : '40rem' }}>
+                  <div className="grid gap-x-8" style={{ gridTemplateColumns: `repeat(${link.mega.length}, minmax(0, 1fr))` }}>
+                    {link.mega.map((col, cidx) => (
+                      <div key={cidx}>
+                        {col.title && <div className="mb-2 text-xs font-bold uppercase tracking-widest text-muted">{col.title}</div>}
+                        <ul className="space-y-1">
+                          {(col.items || []).map((item) => (
+                            <li key={item.href}>
+                              <Link to={item.href} className="block rounded-lg px-2 py-2 font-semibold hover:bg-brand-50 hover:text-brand-700">{item.label}</Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                  {link.cta && (
+                    <div className="mt-4 border-t border-line pt-4">
+                      <Link to={link.cta.href} className="px-2 text-sm font-bold text-brand-700 hover:underline">{link.cta.label}</Link>
+                    </div>
+                  )}
+                </div>
+              )}
+              {link.sub && !link.mega && activeMega === idx && (
+                <div className="absolute top-full left-0 z-50 translate-y-1 rounded-b-2xl bg-surface p-4 text-ink shadow-2xl ring-1 ring-black/5">
+                  <ul className="space-y-1">
+                    {link.sub.map((item) => (
+                      <li key={item.href}>
+                        <Link to={item.href} className="block rounded-lg px-3 py-2 font-medium hover:bg-brand-50 hover:text-brand-700">{item.label}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           ))}
         </nav>
         <div className="flex items-center gap-3">
@@ -43,8 +101,8 @@ function Header() {
       {open && (
         <div className="border-t border-line bg-white md:hidden">
           <Container className="flex flex-col gap-3 py-4 text-base">
-            {navLinks.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</a>
+            {(navLinks || []).map((link) => (
+              <Link key={link.href || link.label} to={link.href} onClick={() => setOpen(false)}>{link.label}</Link>
             ))}
           </Container>
         </div>
@@ -212,13 +270,16 @@ export default function App() {
             <Route path="/contact" element={<LegalPage title="Contact"><p>Reach us at hello@webbuildai.com.</p></LegalPage>} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/directory" element={<DirectoryPage />} />
-            <Route path="/tools" element={<Tools />} />
+            <Route path="/tools/website-stack-generator" element={<WebsiteStackGenerator />} />
             <Route path="/compare" element={<ComparePage />} />
             <Route path="/build" element={<Build />} />
             <Route path="/hosting" element={<Hosting />} />
             <Route path="/seo" element={<SEO />} />
             <Route path="/ai" element={<AI />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/start-here" element={<StartHere />} />
+            <Route path="/domains" element={<Domains />} />
+            <Route path="/grow" element={<Grow />} />
+            <Route path="/software" element={<SoftwarePage />} />
           </Routes>
         </main>
         <Footer />

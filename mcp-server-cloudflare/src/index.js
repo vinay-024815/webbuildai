@@ -6,7 +6,17 @@
 import { MCPProtocol } from "./mcp/protocol.js";
 import { validateAuth, withAuth } from "./middleware/auth.js";
 
-const protocol = new MCPProtocol();
+const protocol = new MCPProtocol;
+
+// Helper to wrap tool results in MCP-compliant content format
+function toMcpToolResult(data) {
+  return { content: [{ type: "text", text: JSON.stringify(data) }] };
+}
+
+// Helper to wrap errors in MCP-compliant format
+function toMcpToolError(message) {
+  return { content: [{ type: "text", text: message }], isError: true };
+}
 
 export default {
   async fetch(request, env, ctx) {
@@ -71,12 +81,16 @@ export default {
           }
 
           try {
-            const result = await protocol.handleToolsCall(name, args, env);
-            return new Response(JSON.stringify({ jsonrpc: "2.0", result, id }), {
+            const rawResult = await protocol.handleToolsCall(name, args, env);
+            // Wrap raw result in MCP-compliant content format
+            const mcpResult = toMcpToolResult(rawResult);
+            return new Response(JSON.stringify({ jsonrpc: "2.0", result: mcpResult, id }), {
               headers: { "Content-Type": "application/json" },
             });
           } catch (err) {
-            return new Response(JSON.stringify({ jsonrpc: "2.0", error: { code: -32603, message: err.message }, id }), {
+            // Wrap error in MCP-compliant format with isError: true
+            const mcpError = toMcpToolError(err.message);
+            return new Response(JSON.stringify({ jsonrpc: "2.0", error: mcpError, id }), {
               status: 500,
               headers: { "Content-Type": "application/json" },
             });

@@ -5,7 +5,7 @@ export default function SEO() {
     <section className="py-12 md:py-20">
       <Container>
         <div className="mb-10 text-center">
-          <h2 className="font-serif text-[40px] leading-tight md:text-[56px] text-ink">
+          <h2 className="display display-md font-serif text-[40px] leading-tight md:text-[56px] text-ink">
             SEO Guides
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-[17px] leading-8 text-muted">

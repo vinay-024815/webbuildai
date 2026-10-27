@@ -1,0 +1,7 @@
+﻿import { useState } from "react";
+import { Container } from "../ui";
+
+export default function WebsiteStackGenerator() {
+  const [step, setStep] = useState(0);
+  return <div className="py-16"><Container><p>Step {step}</p></Container></div>;
+}

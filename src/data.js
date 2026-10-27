@@ -1,11 +1,11 @@
-import siteData from "./content/site.json";
-import navData from "./content/nav.json";
-import heroData from "./content/hero.json";
 import blogsData from "./content/blogs.json";
 import toolsData from "./content/tools.json";
 import comparisonsData from "./content/comparisons.json";
 import seoData from "./content/seo.json";
 import footerData from "./content/footer.json";
+import siteData from "./content/site.json";
+import navData from "./content/nav.json";
+import heroData from "./content/hero.json";
 
 export const site = siteData;
 
@@ -21,15 +21,15 @@ export const heroSecondaryCTA = heroData.secondaryCTA;
 export const softwareColumns = [
   {
     title: "VPN and Privacy",
-    links: ["NordVPN review", "ExpressVPN vs NordVPN", "Surfshark review", "Proton VPN", "Best VPNs 2026"],
+    links: ["Best VPN Services", "Best Free VPNs", "What Is a VPN?", "NordVPN vs ExpressVPN vs Proton VPN"],
   },
   {
     title: "Antivirus and Security",
-    links: ["Bitdefender review", "Norton 360", "Malwarebytes", "Best antivirus", "Password managers"],
+    links: ["Best Antivirus Software", "Best Free Antivirus", "Do You Need Antivirus?", "Best Password Managers"],
   },
   {
     title: "Creative Software",
-    links: ["Adobe Creative Cloud", "Canva Pro review", "CapCut vs Premiere", "Figma vs Sketch", "Best photo editors"],
+    links: ["Best Graphic Design Software", "Canva vs Adobe", "Best Photo Editing Software", "Best Video Editing Software", "Best AI Image Generators"],
   },
 ];
 
@@ -40,7 +40,7 @@ export const articles = blogsData.map((blog) => ({
   kicker: blog.kicker,
   title: blog.title,
   excerpt: blog.excerpt,
-  href: blog.href || `#blog/${blog.slug}`,
+  href: blog.href || `blog/${blog.slug}`,
   image: blog.image,
   imageAlt: blog.imageAlt,
   category: blog.category,

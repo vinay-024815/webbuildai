@@ -2,15 +2,16 @@ let cache = null;
 
 export async function loadBlogs() {
   if (cache) return cache;
+  // Use bundled content directly to avoid duplication
   try {
-    const res = await fetch("/blogs.json");
-    const ct = res.headers.get("content-type") || "";
-    if (!res.ok || !ct.includes("json")) { cache = []; return cache; }
-    const data = await res.json();
-    cache = Array.isArray(data) ? data : [];
-  } catch {
-    cache = [];
-  }
+    const mod = await import("./content/blogs.json");
+    const data = mod.default || mod;
+    if (Array.isArray(data)) {
+      cache = data.filter((b) => !b.draft);
+      return cache;
+    }
+  } catch {}
+  cache = [];
   return cache;
 }
 
@@ -31,4 +32,19 @@ export function getPosts(blogs, { category, page = 1, limit = 12 } = {}) {
 
 export function getPost(blogs, slug) {
   return blogs.find((b) => b.slug === slug && !b.draft) || null;
+}
+
+function timestampOf(post) {
+  const value = post.updated || post.date;
+  const time = value ? new Date(value).getTime() : 0;
+  return Number.isNaN(time) ? 0 : time;
+}
+
+/** Newest first, optionally skipping the post that is currently open. */
+export function getLatest(blogs, { excludeSlug, limit = 4 } = {}) {
+  return blogs
+    .filter((blog) => !blog.draft && blog.slug !== excludeSlug)
+    .slice()
+    .sort((a, b) => timestampOf(b) - timestampOf(a))
+    .slice(0, limit);
 }

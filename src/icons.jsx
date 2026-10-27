@@ -100,7 +100,7 @@ export function Icon({ name, className = "size-4" }) {
 
 export function LogoMark() {
   return (
-    <span className="grid size-9 place-items-center rounded-full bg-accent text-surface">
+    <span className="grid size-9 place-items-center rounded-full bg-forest text-white">
       <svg viewBox="0 0 24 24" className="size-[18px]" fill="currentColor" aria-hidden>
         <path d="M12 3c-2.8 3.4-7 6.2-7 10.4A7 7 0 0 0 12 21a7 7 0 0 0 7-7.6C19 9.2 14.8 6.4 12 3Z" />
       </svg>

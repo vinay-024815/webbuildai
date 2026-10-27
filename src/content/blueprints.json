@@ -1,0 +1,5 @@
+[
+  { "title": "Business Website Blueprint", "href": "/blog/small-business-web-hosting", "description": "Domain, reliable hosting, WordPress or an AI builder, a fast theme and lead capture: everything a local or online business needs.", "tag": "Business / Services", "image": "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=800&h=420&q=80" },
+  { "title": "Creator Blog Blueprint", "href": "/blog/how-to-start-a-wordpress-blog", "description": "WordPress on budget hosting, a lightweight theme, SEO basics and an email list, built to grow traffic and income you own.", "tag": "Blog / Newsletter", "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&h=420&q=80" },
+  { "title": "AI App Blueprint", "href": "/blog/best-ai-website-builders", "description": "Prompt-to-app builder or coding agent, application hosting and a safe workflow. Ship an MVP in days, not months.", "tag": "Web App / SaaS", "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&h=420&q=80" }
+]

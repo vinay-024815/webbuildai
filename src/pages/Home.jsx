@@ -4,6 +4,18 @@ import { Icon, LogoMark } from "../icons";
 import { articles, comparisons, directory, heroTools, heroHeadline, heroSubheadline, heroPrimaryCTA, heroSecondaryCTA, navLinks, news, popular, softwareColumns, usefulTools } from "../data";
 import { CategoryTile } from "../components/CategoryTile";
 import { ArticleCard } from "../components/ArticleCard";
+import { AnnouncementBanner } from "../components/AnnouncementBanner";
+import { HeroTopics } from "../components/HeroTopics";
+import { LatestArticlesCarousel } from "../components/LatestArticlesCarousel";
+import { NewsAndReviews } from "../components/NewsAndReviews";
+import { Blueprints } from "../components/Blueprints";
+import { BestPicks } from "../components/BestPicks";
+import { BuildPicker } from "../components/BuildPicker";
+import { AISearch } from "../components/AISearch";
+import { AIToolsDirectory } from "../components/AIToolsDirectory";
+import { FreeToolsGrid } from "../components/FreeToolsGrid";
+import { CompareGrid } from "../components/CompareGrid";
+import { NewsletterCTA } from "../components/NewsletterCTA";
 function Hero() {
   const [cats, setCats] = useState([]);
   useEffect(() => {
@@ -18,7 +30,7 @@ function Hero() {
       <div aria-hidden className="pointer-events-none absolute -right-24 -top-28 size-[420px] rounded-full bg-sage/80 blur-[2px] md:size-[520px]" />
       <div aria-hidden className="pointer-events-none absolute right-16 top-10 size-40 rounded-full bg-mint/70 md:right-40" />
       <Container className="relative">
-        <h1 className="max-w-[15ch] font-serif text-[46px] leading-[1.08] font-medium tracking-[-0.03em] text-ink md:text-[72px]">
+        <h1 className="display display-sm font-serif text-[46px] leading-[1.08] font-medium tracking-[-0.03em] text-ink md:text-[72px] max-w-[15ch]">
           {heroHeadline}
         </h1>
         <p className="mt-6 max-w-[48ch] text-[17px] leading-8 text-muted md:text-[19px]">
@@ -52,7 +64,7 @@ function Hero() {
 </div>
 
         <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {cats.map((c) => (
+          {cats.slice(0, 12).map((c) => (
             <CategoryTile key={c.slug} cat={c} />
           ))}
         </div>
@@ -69,25 +81,67 @@ export function Software() {
     "Design, photo, video and AI image tools for ads, social content, thumbnails and brand assets.",
   ];
 
-  const icons = [
-    <svg viewBox="0 0 48 48" fill="none" className="h-12 w-12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="24" cy="23" r="20" />
-      <path d="M4 23h40M24 3c-7 6-10 13-10 20s3 14 10 20M24 3c7 6 10 13 10 20s-3 14-10 20" />
-      <circle cx="38" cy="38" r="8" fill="#FFC400" stroke="currentColor" />
-      <path d="m34.5 38 2.5 2.5 4-5" stroke="#07584F" />
-    </svg>,
-    <svg viewBox="0 0 48 48" fill="none" className="h-12 w-12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M24 3 43 11v12c0 12-8 19-19 23C13 42 5 35 5 23V11L24 3Z" />
-      <rect x="16" y="22" width="16" height="12" rx="3" fill="#FFC400" />
-      <path d="M19 22v-4a5 5 0 0 1 10 0v4" />
-    </svg>,
-    <svg viewBox="0 0 48 48" fill="none" className="h-12 w-12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M24 4C12 4 4 13 4 24c0 10 7 18 17 18h3a4 4 0 0 0 3-7 4 4 0 0 1 3-7h4c6 0 10-5 10-11S34 4 24 4Z" />
-      <circle cx="16" cy="21" r="3" fill="#FFC400" />
-      <circle cx="23" cy="13" r="3" fill="#FFC400" />
-      <circle cx="32" cy="14" r="3" fill="#FFC400" />
-    </svg>,
-  ];
+
+const icons = [
+  // 1. VPN & Privacy — Globe with location marker
+  <svg
+    key="vpn"
+    viewBox="0 0 56 56"
+    fill="none"
+    className="h-12 w-12"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="25" cy="28" r="20" />
+    <path d="M5 28h40M25 8c-7 7-10 14-10 20s3 13 10 20M25 8c7 7 10 14 10 20s-3 13-10 20" />
+    <path d="M43 34c-5 0-9 4-9 9 0 6 9 12 9 12s9-6 9-12c0-5-4-9-9-9Z" fill="#FFC400" stroke="#315C43" />
+    <circle cx="43" cy="43" r="2.5" fill="#315C43" stroke="none" />
+  </svg>,
+
+  // 2. Antivirus — Shield with check
+  <svg
+    key="security"
+    viewBox="0 0 56 56"
+    fill="none"
+    className="h-12 w-12"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path
+      d="M28 5 46 12v13c0 12-7 20-18 26C17 45 10 37 10 25V12L28 5Z"
+      fill="#E7F3F0"
+    />
+    <path d="M19 28l6 6 13-14" stroke="#08796E" strokeWidth="3" />
+    <path d="M42 7v-4M50 15h4M46 9l3-3" stroke="#FFC400" strokeWidth="2.5" />
+  </svg>,
+
+  // 3. Creative Software — Palette with unique color drops
+  <svg
+    key="creative"
+    viewBox="0 0 56 56"
+    fill="none"
+    className="h-12 w-12"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path
+      d="M28 6C15 6 5 16 5 29c0 12 9 21 21 21h5c4 0 7-3 7-7 0-3-2-5-2-8 0-2 2-4 5-4h3c5 0 7-4 7-9C51 13 40 6 28 6Z"
+      fill="#F4EDFA"
+    />
+    <circle cx="17" cy="24" r="3.5" fill="#08796E" stroke="none" />
+    <circle cx="24" cy="15" r="3.5" fill="#7950A1" stroke="none" />
+    <circle cx="35" cy="17" r="3.5" fill="#FFC400" stroke="none" />
+    <circle cx="40" cy="25" r="3.5" fill="#315C43" stroke="none" />
+    <path d="M28 32l2 4 4 2-4 2-2 4-2-4-4-2 4-2 2-4Z" fill="#FFC400" stroke="none" />
+  </svg>,
+];
+
 
   return (
     <section id="reviews" className="bg-white px-4 py-14 sm:px-6 md:py-20">
@@ -130,7 +184,7 @@ export function Software() {
                 {col.links.map((item) => (
                   <li key={item}>
                     <a
-                      href="#reviews"
+                      href={index === 0 ? "/blog/best-vpn" : index === 1 ? "/blog/best-antivirus-software" : "/blog/best-ai-image-generators"}
                       className="group/link flex min-h-[48px] items-center justify-between gap-3 rounded-xl px-2.5 py-3 text-[15px] font-semibold leading-5 text-ink transition-colors duration-200 hover:bg-[#E7F3F0] hover:text-[#07584F] sm:text-[16px]"
                     >
                       <span>{item}</span>
@@ -178,7 +232,7 @@ export function Directory() {
         <div>
           <h2 className="font-serif text-[36px] leading-tight md:text-[44px]">Find the right AI tool, fast</h2>
           <p className="mt-3 max-w-md text-[17px] leading-8 text-muted">Assistants, writing, design, code, SEO, and automation — sorted by job, not by hype.</p>
-          <a href="#tools" className="mt-6 inline-flex rounded-full border border-ink/15 px-5 py-2.5 text-[15px] font-medium hover:border-ink/30">Browse directory</a>
+          <a href="/directory" className="mt-6 inline-flex rounded-full border border-ink/15 px-5 py-2.5 text-[15px] font-medium hover:border-ink/30">Browse directory</a>
         </div>
         <div className="grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-4">
           {directory.map((col) => (
@@ -186,7 +240,7 @@ export function Directory() {
               <h3 className="text-[15px] font-semibold">{col.title}</h3>
               <ul className="mt-2.5 space-y-2">
                 {col.items.map((item) => (
-                  <li key={item}><a href="#tools" className="text-[15px] text-muted hover:text-ink">{item}</a></li>
+                  <li key={item}><a href="/directory" className="text-[15px] text-muted hover:text-ink">{item}</a></li>
                 ))}
               </ul>
             </div>
@@ -208,7 +262,7 @@ export function UsefulTools() {
               <h3 className="border-b border-line pb-3 text-[16px] font-semibold">{col.group}</h3>
               <ul className="mt-4 space-y-3">
                 {col.items.map((item) => (
-                  <li key={item}><a href="#tools" className="text-[16px] text-muted hover:text-ink">{item}</a></li>
+                  <li key={item}><a href="/tools" className="text-[16px] text-muted hover:text-ink">{item}</a></li>
                 ))}
               </ul>
             </div>
@@ -226,7 +280,7 @@ export function Compare() {
         <h2 className="font-serif text-[36px] md:text-[44px]">Side-by-side, no paid winners</h2>
         <div className="mt-8 grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
           {comparisons.map((item) => (
-            <a key={item.id} href={item.href || "#compare"} className="flex items-center justify-between border-b border-line py-4 text-[17px] hover:text-leaf">
+            <a key={item.id} href={item.href || "#compare"} className="flex items-center justify-between border-b border-line py-4 text-[17px] hover:text-forest">
               {item.title}
               <Icon name="arrow" className="size-5 text-muted" />
             </a>
@@ -260,7 +314,7 @@ function Newsletter() {
           <div className="relative grid items-center gap-7 md:grid-cols-[1.1fr_1fr] md:gap-8">
             {/* CTA text */}
             <div>
-              <h2 className="max-w-[19ch] font-serif text-[30px] font-semibold leading-[1.12] tracking-[-0.03em] text-white sm:text-[36px] md:text-[42px]">
+              <h2 className="display display-sm font-serif text-[30px] font-semibold leading-[1.12] tracking-[-0.03em] text-white sm:text-[36px] md:text-[42px]">
                 Get smarter about AI, websites and SEO.
               </h2>
 
@@ -319,13 +373,23 @@ function Newsletter() {
 export default function Home() {
   return (
     <>
+      {/* <AnnouncementBanner /> */}
       <Hero />
+      {/* <HeroTopics /> */}
       <Software />
-      <Articles />
-      <Directory />
-      <UsefulTools />
-      <Compare />
-     <Newsletter/>
+      <LatestArticlesCarousel />
+      <NewsAndReviews />
+      <Blueprints />
+     <div className="bg-[#FBFAF6]"> <BestPicks /></div>
+      <BuildPicker />
+      <AISearch />
+        {/* <div className="bg-[#FBFAF6]">  <AIToolsDirectory /></div> */}
+     <div  className="bg-[#FBFAF6]"> <section className="mx-auto w-full max-w-[1000px] py-20">
+        <AIToolsDirectory />
+        <FreeToolsGrid />
+      </section></div>
+      <CompareGrid />
+      <NewsletterCTA />
     </>
   );
 }

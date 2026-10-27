@@ -1,52 +1,141 @@
 {
   "main": [
     {
+      "label": "Start Here",
+      "href": "/start-here"
+    },
+    {
       "label": "Build",
       "href": "/build",
-      "sub": [
-        { "label": "How to Create a Website", "href": "/build/create-website" },
-        { "label": "What Is WordPress", "href": "/build/wordpress" },
-        { "label": "Best Website Builders", "href": "/build/builders" },
-        { "label": "WordPress Guides", "href": "/build/wordpress-guides" }
-      ]
+      "mega": [
+        {
+          "items": [
+            { "label": "How to Create a Website", "href": "/blog/how-to-build-a-website" },
+            { "label": "What Is WordPress", "href": "/blog/what-is-wordpress" },
+            { "label": "Best Website Builders", "href": "/blog/best-website-builder" },
+            { "label": "Best Ecommerce Platforms", "href": "/blog/best-ecommerce-platforms" },
+            { "label": "Vibe Coding Guide", "href": "/blog/vibe-coding-guide" }
+          ]
+        },
+        {
+          "items": [
+            { "label": "How to Start a WordPress Blog", "href": "/blog/how-to-start-wordpress-blog" },
+            { "label": "Free WordPress Themes", "href": "/blog/free-wordpress-themes" },
+            { "label": "Popular WordPress Themes", "href": "/blog/popular-wordpress-themes" },
+            { "label": "Build a WordPress Website", "href": "/blog/how-to-build-a-wordpress-website" },
+            { "label": "WordPress Guides", "href": "/blog/wordpress-guides" }
+          ]
+        }
+      ],
+      "cta": { "label": "All Build guides →", "href": "/build" }
     },
     {
       "label": "AI",
       "href": "/ai",
-      "sub": [
-        { "label": "Best AI Website Builders", "href": "/ai/builders" },
-        { "label": "Build with Lovable", "href": "/ai/lovable" },
-        { "label": "AI Agents Explained", "href": "/ai/agents" },
-        { "label": "AI Tools Directory", "href": "/ai/directory" }
-      ]
+      "mega": [
+        {
+          "items": [
+            { "label": "Best AI Website Builders", "href": "/blog/best-ai-website-builders-2026" },
+            { "label": "Build a Website with AI", "href": "/blog/how-to-build-a-website-with-ai" },
+            { "label": "Build a Website with Lovable", "href": "/blog/how-to-build-a-website-with-lovable" },
+            { "label": "Build a Website with ChatGPT", "href": "/blog/how-to-build-a-website-with-chatgpt" },
+            { "label": "Build a Website with Claude", "href": "/blog/how-to-build-a-website-with-claude" }
+          ]
+        },
+        {
+          "items": [
+            { "label": "Best AI Coding Assistants", "href": "/blog/best-ai-coding-assistants" },
+            { "label": "AI Agents Explained", "href": "/blog/ai-agents-explained" },
+            { "label": "What Is MCP?", "href": "/blog/what-is-mcp-model-context-protocol" },
+            { "label": "AI Automation for Websites", "href": "/blog/ai-automation-for-websites" },
+            { "label": "AI Tools Directory", "href": "/directory" }
+          ]
+        }
+      ],
+      "cta": { "label": "All AI guides →", "href": "/ai" }
     },
     {
       "label": "Hosting",
       "href": "/hosting",
-      "sub": [
-        { "label": "Best Web Hosting", "href": "/hosting" },
-        { "label": "Best WordPress Hosting", "href": "/hosting/wordpress" },
-        { "label": "Cheap VPS Hosting", "href": "/hosting/vps" }
-      ]
+      "mega": [
+        {
+          "items": [
+            { "label": "Best Web Hosting", "href": "/hosting" },
+            { "label": "Best WordPress Hosting", "href": "/blog/best-wordpress-hosting" },
+            { "label": "Cheap Web Hosting", "href": "/blog/best-cheap-web-hosting" },
+            { "label": "Free Website Hosting", "href": "/blog/free-website-hosting" }
+          ]
+        },
+        {
+          "items": [
+            { "label": "Cheap VPS Hosting", "href": "/blog/cheap-vps-hosting" },
+            { "label": "Best Cloud Hosting", "href": "/blog/best-cloud-hosting" },
+            { "label": "Dedicated Server Hosting", "href": "/blog/dedicated-server-hosting" },
+            { "label": "How to Choose Hosting", "href": "/blog/how-to-choose-web-hosting" }
+          ]
+        }
+      ],
+      "cta": { "label": "All hosting guides →", "href": "/hosting" }
     },
     {
       "label": "SEO",
       "href": "/seo",
-      "sub": [
-        { "label": "SEO Action Plan", "href": "/seo/action-plan" },
-        { "label": "Technical SEO Checklist", "href": "/seo/technical" },
-        { "label": "AI Search: GEO & AEO", "href": "/seo/geo-aeo" }
-      ]
+      "mega": [
+        {
+          "items": [
+            { "label": "SEO Action Plan", "href": "/blog/technical-seo-checklist-2026" },
+            { "label": "Technical SEO Checklist", "href": "/blog/technical-seo-checklist-2026" },
+            { "label": "Improve Website Speed", "href": "/blog/how-to-improve-website-speed" }
+          ]
+        },
+        {
+          "items": [
+            { "label": "AI Search: GEO & AEO", "href": "/blog/ai-search-optimization-geo-aeo-guide" },
+            { "label": "Are AI-Built Sites Good for SEO?", "href": "/blog/are-ai-built-websites-good-for-seo" },
+            { "label": "Free Website Audit", "href": "/tools/website-audit" }
+          ]
+        }
+      ],
+      "cta": { "label": "All SEO guides →", "href": "/seo" }
     },
     {
       "label": "Tools",
       "href": "/tools",
-      "sub": []
+      "mega": [
+        {
+          "title": "Plan & Launch",
+          "items": [
+            { "label": "Build My Website Stack", "href": "/tools/website-stack-generator" },
+            { "label": "Website Cost Calculator", "href": "/tools/website-cost-calculator" },
+            { "label": "Domain Name Generator", "href": "/tools/domain-name-generator" }
+          ]
+        },
+        {
+          "title": "SEO & Analytics",
+          "items": [
+            { "label": "AI Website Auditor", "href": "/tools/website-audit" },
+            { "label": "SEO Title Generator", "href": "/tools/seo-title-generator" },
+            { "label": "Meta Description Generator", "href": "/tools/meta-description-generator" }
+          ]
+        },
+        {
+          "title": "Writing & AI",
+          "items": [
+            { "label": "AI Content Optimizer", "href": "/tools/ai-content-optimizer" },
+            { "label": "AI Prompt Generator", "href": "/tools/ai-prompt-generator" },
+            { "label": "Text Anonymizer for AI", "href": "/tools/text-anonymizer" }
+          ]
+        }
+      ],
+      "cta": { "label": "All free tools →", "href": "/tools" }
     },
     {
       "label": "Compare",
-      "href": "/compare",
-      "sub": []
+      "href": "/compare"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
     }
   ]
 }

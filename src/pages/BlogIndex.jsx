@@ -15,9 +15,9 @@ export default function BlogIndex() {
     });
   }, [page]);
   return (
-    <section className="py-6 md:py-8">
+    <section className="py-6 md:py-8 bg-surface">
       <Container>
-        <h1 className="font-serif text-[36px] leading-tight md:text-[44px]">Blog</h1>
+        <h1 className="display display-sm font-serif text-[36px] leading-tight md:text-[44px] text-ink">Blog</h1>
         <p className="mt-3 max-w-xl text-base text-muted">Latest articles and guides.</p>
         {posts.length === 0 && <p className="mt-10 text-muted">No posts yet.</p>}
         <div className="mt-10 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
