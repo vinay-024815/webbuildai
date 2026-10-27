@@ -10,7 +10,9 @@ import { hashContent } from "../utils/hash.js";
 import { generateSlug } from "../utils/slug.js";
 
 // Content directory - relative to the project root
-const CONTENT_DIR = path.join(process.cwd(), "src", "content");
+// const CONTENT_DIR = path.join(process.cwd(), "src", "content");
+const CONTENT_DIR = path.join(__dirname, "..", "..", "src", "content");
+
 
 // Cache for content files (loaded once at startup)
 let _contentFilesCache = null;
